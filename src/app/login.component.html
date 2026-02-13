@@ -1,0 +1,16 @@
+<div style="max-width:360px;margin:40px auto;padding:16px;border:1px solid #ddd;border-radius:6px;">
+  <h3>Login</h3>
+
+  <label>Email</label>
+  <input type="email" (input)="email.set($event.target.value)" placeholder="email" style="width:100%;padding:8px;margin:6px 0;" />
+
+  <label>Password</label>
+  <input type="password" (input)="password.set($event.target.value)" placeholder="password" style="width:100%;padding:8px;margin:6px 0;" />
+
+  <div style="display:flex;gap:8px;margin-top:8px;">
+    <button (click)="loginLocal()">Login (local)</button>
+    <button (click)="loginApi()">Login (api)</button>
+  </div>
+
+  @if (error()) { <div style="color:red;margin-top:8px;">{{error()}}</div> }
+</div>
